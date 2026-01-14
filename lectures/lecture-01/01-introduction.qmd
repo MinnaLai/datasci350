@@ -151,13 +151,13 @@ Tell us your name, your major, one thing you really like, and something we don't
 :::{style="margin-top: 60px;"}
 :::
 
-- The teaching assistants for this course are Alix Morales and Harris Wang
+- The teaching assistants for this course are [Alix Morales]{.alert} and [Harris Wang]{.alert}
 
-- Alix will be answering questions during our lectures and holding office hours. You can reach out to him via email at <alix.morales@emory.edu>
+- [Alix]{.alert} will be answering questions during our lectures and holding office hours. You can reach out to him via email at <alix.morales@emory.edu>
 
-- Harris will also be grading your assignments and quizzes (with my oversight). His email address is <harris.wang@emory.edu>
+- [Harris]{.alert} will also be grading your assignments and quizzes (with my oversight). His email address is <harris.wang@emory.edu>
 
-- We are all here to help you! So feel free to ask questions during class, office hours, or via email 😃
+- [We are all here to help you!]{.alert} So feel free to ask questions during class, office hours, or via email 😃
 
 ## Office hours
 ### What for and what not for
@@ -479,15 +479,13 @@ And much more...
 ## Logistics
 ### Course information
 
-:::{style="margin-top: 40px;"}
-:::
+:::{style="margin-top: 40px; font-size: 25px;"}
+- [Syllabus]{.alert}: Available on our [course repository](https://github.com/danilofreire/datasci350/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/datasci350/syllabus.html). The course is designed to be self-contained. The syllabus includes links to slides and Jupyter Notebooks we will use in class, along with recommended readings, and problem sets. I will upload slides throughout the term as we progress.
+- [Schedule]{.alert}: Lectures are on Mondays and Wednesdays from 5:30 to 6:45 pm in the Psychology Building, Room 230
+- [Office Hours]{.alert}: Please reach out to Alix to arrange a meeting. I am available to meet you [at any time.]{.alert}, but please email me in advance so that two students don't meet at the same time 😉
 
-::: {style="font-size: 28px;"}
-- **Syllabus**: Available on our [course repository](https://github.com/danilofreire/datasci350/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/datasci350/syllabus.html). The course is designed to be self-contained. The syllabus includes links to slides and Jupyter Notebooks we will use in class, along with recommended readings, and problem sets. I will upload slides throughout the term as we progress.
-- **Schedule**: Lectures are on Mondays and Wednesdays from 4:00 to 5:15 pm
-- **Office Hours**: I'm available to meet you [at any time.]{.alert} Please reach out some time in advance and we can schedule a meeting
-
-- **Materials**:
+- [Materials (recap)]{.alert}:
+    - Course website: <https://danilofreire.github.io/datasci350/>
     - Course repository: <https://github.com/danilofreire/datasci350>
     - Canvas
 :::
@@ -498,12 +496,12 @@ And much more...
 ::: {style="margin-top: 40px;"}
 :::
 
-- **Problem sets**: Ten of them, due on Wednesdays at 11:59 pm (50%)
-- **In-class quizzes**: Five of them (30%)
-- **Final project**: Due on the last day of class (20%)
-- **Late policy**: 10% off per day late
-- **Collaboration**: You can discuss assignments with your classmates, but you must write your own code and submit your own work. AI is allowed
-- **Academic integrity**: Please refer to the syllabus for the university's policy on academic integrity
+- [Problem sets]{.alert}: Ten of them, due on Wednesdays at 11:59 pm (50%)
+- [In-class quizzes]{.alert}: Five of them (30%)
+- [Final project]{.alert}: Due on the last day of class (20%)
+- [Late policy]{.alert}: 10% off per day late
+- [Collaboration]{.alert}: You can discuss assignments with your classmates, but you must write your own code and submit your own work. AI is allowed
+- [Academic integrity]{.alert}: Please refer to the syllabus for the university's policy on academic integrity
 
 # Set up `r emo::ji('computer')` `r emo::ji('hammer_and_wrench')` {background-color="#2d4563"}
 
@@ -512,9 +510,9 @@ And much more...
 ::: {style="margin-top: 40px;"}
 :::
 
-- **Git**: Version control system. Download it [here](https://git-scm.com/). Instructions for installation [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Feel free to configure it if you wish (instructions [here](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)), but we are going to talk about it in class
+- [Git]{.alert}: Version control system. Download it [here](https://git-scm.com/). Instructions for installation [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Feel free to configure it if you wish (instructions [here](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)), but we are going to talk about it in class
 
-- **GitHub**: Online platform for hosting code repositories. You will use it a lot, and not only for this class. Create an account on [GitHub](https://github.com/) and register for a student/educator [discount](https://education.github.com/discount_requests/new)
+- [GitHub]{.alert}: Online platform for hosting code repositories. You will use it a lot, and not only for this class. Create an account on [GitHub](https://github.com/) and register for a student/educator [discount](https://education.github.com/discount_requests/new)
 
 - There is a series of tutorials available on our course website on how to set up Git and GitHub: <https://danilofreire.github.io/datasci350/tutorials/tutorials.html>
 
@@ -523,9 +521,9 @@ And much more...
 ::: {style="margin-top: 40px;"}
 :::
 
-- **Windows:** Please install [Windows Subsystem for Linux (bash)](https://learn.microsoft.com/en-us/windows/wsl/install). Another good tutorial can be found [here](https://itsfoss.com/install-bash-on-windows/). [FAQ available here](https://learn.microsoft.com/en-us/windows/wsl/faq)
-- **Mac:** None, but you can install [iTerm2](https://iterm2.com/), [Homebrew](https://brew.sh/) and [Oh My Zsh](https://ohmyz.sh/) for a better experience
-- **Linux:** None, you should be good to go
+- [Windows]{.alert}: Please install [Windows Subsystem for Linux (bash)](https://learn.microsoft.com/en-us/windows/wsl/install). Another good tutorial can be found [here](https://itsfoss.com/install-bash-on-windows/). [FAQ available here](https://learn.microsoft.com/en-us/windows/wsl/faq)
+- [Mac]{.alert}: None, but you can install [iTerm2](https://iterm2.com/), [Homebrew](https://brew.sh/) and [Oh My Zsh](https://ohmyz.sh/) for a better experience
+- [Linux]{.alert}: None, you should be good to go
   - [Tip]{.alert}: [VS Code](https://code.visualstudio.com/) is a great code editor and it [already includes a terminal](https://code.visualstudio.com/docs/terminal/getting-started)
 
 ## Other tools
@@ -534,10 +532,10 @@ And much more...
 :::
 
 - We will have time to install other tools during the course. But if you want to get ahead, you can install the following:
-- **VS Code**: Code editor. Download it [here](https://code.visualstudio.com/)
-- **Anaconda**: Python distribution. Download it [here](https://www.anaconda.com/products/distribution)
-- **Docker**: Containerisation tool. Download it [here](https://www.docker.com/)
-- **SQLite**: You can use the [sqlite3](https://docs.python.org/3.9/library/sqlite3.html) Python package or install the [SQLite](https://www.sqlite.org/download.html) database. The package has everything you need to get started
+- [VS Code]{.alert}: Code editor. Download it [here](https://code.visualstudio.com/)
+- [Anaconda]{.alert}: Python distribution. Download it [here](https://www.anaconda.com/products/distribution)
+- [Docker]{.alert}: Containerisation tool. Download it [here](https://www.docker.com/)
+- [SQLite]{.alert}: You can use the [sqlite3](https://docs.python.org/3.9/library/sqlite3.html) Python package or install the [SQLite](https://www.sqlite.org/download.html) database. The package has everything you need to get started
 
 ::: {style="margin-top: 30px;"}
 :::
@@ -563,4 +561,4 @@ And much more...
 
 # Questions? {background-color="#2d4563"}
 
-# Thank you very much for your attention! 🙏🏻 <br><br> Have a great day! 😊 {background-color="#2d4563"}
+# Thank you very much for your attention! 🙏🏻 <br><br> See you soon! 😊 {background-color="#2d4563"}
