@@ -12,6 +12,8 @@ format:
 transition: slide
 transition-speed: default
 scrollable: true
+revealjs-plugins:
+  - multimodal
 engine: python3
 editor:
   render-on-save: true
@@ -40,7 +42,7 @@ editor:
 
 :::{.column size="50%"}
 :::{style="text-align: center;"}
-![](figures/home.jpg){width="80%"}
+[![](figures/home.jpg){width="80%"}](#){data-modal-type="image" data-modal-url="figures/home.jpg"}
 :::
 :::
 :::
@@ -71,8 +73,8 @@ editor:
 
 :::{.column size="50%"}
 :::{style="text-align: center; margin-top: -40px;"}
-![](figures/regex.png){width="80%"}
-![](figures/regex.webp){width="80%"}
+[![](figures/regex.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/regex.png"}
+[![](figures/regex.webp){width="80%"}](#){data-modal-type="image" data-modal-url="figures/regex.webp"}
 :::
 :::
 :::
@@ -95,11 +97,19 @@ editor:
 
 :::{.column size="50%"}
 :::{style="text-align: center; margin-top: -40px;"}
-![](figures/git.png)
-![](figures/github.png)
+[![](figures/git.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/git.png"}
+[![](figures/github.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/github.png"}
 :::
 :::
 :::
+:::
+
+## Upcoming event
+
+:::{style="text-align: center; margin-top: 30px;"}
+[![](figures/google.png){width="35%"}](#){data-modal-type="image" data-modal-url="figures/google.png"}
+
+[RSVP here](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOGf5iP0NIbROsdVBvVq1metUNTVaSUJYMkI4QkowR1NBWUtEV1k4NFMzVSQlQCN0PWcu)
 :::
 
 # Project management 📂 {background-color="#2d4563"}
@@ -131,7 +141,7 @@ In the data science workflow, there are [two sorts of surprises and cognitive st
 :::
 
 ::: {.column width="50%" layout-valign="center"}
-![](figures/pippi-langstrumpf.gif){width="80%"}
+[![](figures/pippi-langstrumpf.gif){width="80%"}](#){data-modal-type="image" data-modal-url="figures/pippi-langstrumpf.gif"}
 :::
 :::
 :::
@@ -149,7 +159,7 @@ In the data science workflow, there are [two sorts of surprises and cognitive st
 - So, [be kind to future-you]{.alert}. Establish a good workflow. You'll thank yourself later 😊
 
 :::{style="text-align: center;"}
-![](figures/fox.png){width="40%"}
+[![](figures/fox.png){width="40%"}](#){data-modal-type="image" data-modal-url="figures/fox.png"}
 :::
 :::
 :::
@@ -209,7 +219,7 @@ For R projects for example:
 
 :::{.column size="50%"}
 :::{style="text-align: center;"}
-![](figures/rproject-setup.png){width="300"}
+[![](figures/rproject-setup.png){width="300"}](#){data-modal-type="image" data-modal-url="figures/rproject-setup.png"}
 :::
 :::
 :::
@@ -235,7 +245,7 @@ For R projects for example:
 
 :::{.column size="50%"}
 :::{style="text-align: center;"}
-![](figures/file_management.png){width="65%"}
+[![](figures/file_management.png){width="65%"}](#){data-modal-type="image" data-modal-url="figures/file_management.png"}
 :::
 :::
 :::
@@ -260,7 +270,7 @@ For R projects for example:
 :::
 
 :::{.column size="50%"}
-![](figures/01-version-control.png){width="70%"}
+[![](figures/01-version-control.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/01-version-control.png"}
 :::
 :::
 :::
@@ -268,7 +278,7 @@ For R projects for example:
 ## Why version control?
 
 :::{style="margin-top: 30px; font-size: 24px; text-align: center;"}
-![](http://phdcomics.com/comics/archive/phd101212s.gif){width="40%"}
+[![](http://phdcomics.com/comics/archive/phd101212s.gif){width="40%"}](#){data-modal-type="image" data-modal-url="http://phdcomics.com/comics/archive/phd101212s.gif"}
 :::
 
 ## More reasons to use version control
@@ -289,7 +299,7 @@ For R projects for example:
 :::
 
 :::{.column size="50%"}
-![](figures/version-control-joke-2.jpeg){width="70%"}
+[![](figures/version-control-joke-2.jpeg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/version-control-joke-2.jpeg"}
 :::
 :::
 :::
@@ -301,7 +311,7 @@ For R projects for example:
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column size="50%"}
-![](figures/git.png){width="30%"}
+[![](figures/git.png){width="30%"}](#){data-modal-type="image" data-modal-url="figures/git.png"}
 
 - Git is a [distributed version control system]{.alert}
 - Imagine if your Dropbox and the "Track changes" feature in MS Word had a baby
@@ -313,7 +323,7 @@ For R projects for example:
 :::
 
 :::{.column size="50%"}
-![](figures/github.png){width="45%"}
+[![](figures/github.png){width="45%"}](#){data-modal-type="image" data-modal-url="figures/github.png"}
 
 - [Git and GitHub are distinct things]{.alert}
 - [GitHub is an online hosting platform]{.alert} that allows you to host your code online
@@ -339,7 +349,7 @@ For R projects for example:
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/git-vscode.png){width="50%"}
+[![](figures/git-vscode.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/git-vscode.png"}
 :::
 :::
 :::
@@ -365,7 +375,7 @@ For R projects for example:
 - We will talk about Copilot in a future lecture, but you can start using it now
 
 :::{style="text-align: center;"}
-![](figures/professorcat.png){width="40%"}
+[![](figures/professorcat.png){width="40%"}](#){data-modal-type="image" data-modal-url="figures/professorcat.png"}
 :::
 :::
 :::
@@ -430,38 +440,38 @@ Check out [these setup instructions](https://swcarpentry.github.io/git-novice/02
 
 ## Repositories
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 28px;"}
 :::{.columns}
 :::{.column size="50%"}
-- Repositories, usually called [repos](https://en.wikipedia.org/wiki/Repository_(version_control)), store the full history and source control of a project
-- They can either be hosted locally, or on a shared server, such as GitHub
+- [Repositories]{.alert}, usually called [repos](https://en.wikipedia.org/wiki/Repository_(version_control)), store the [full history and source control of a project]{.alert}
+- They can either be hosted locally, or on a shared server, such as [GitHub](https://github.com/)
 - Most repositories are stored on GitHub, while core contributors make copies of the repository on their machine and update the repository using the `push/pull` system
-- Any repository stored somewhere other than locally is called a ‘remote repository’
+- Any repository stored somewhere other than locally is called a [remote repository]{.alert}
 :::
 
 :::{.column size="50%"}
 :::{style="text-align: center;"}
-![](figures/03-version-control.png){width="60%"}
+[![](figures/03-version-control.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/03-version-control.png"}
 :::
 :::
 :::
 :::
 
-## {background-image="figures/qtm350-repo.png"}
+## {background-image="figures/datasci350-repo.png"}
 
 ## Repos vs directories
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 28px;"}
 :::{.columns}
 :::{.column size="50%"}
-- Repositories are [timelines of the entire project]{.alert}, including all changes made previously
-- Directories, or ‘working directories’ are projects at their [current state in time]{.alert}
+- [Repositories]{.alert} are [timelines of the entire project]{.alert}, including all changes made previously
+- [Directories]{.alert}, or ‘working directories’ are projects at their [current state in time]{.alert}
 - Any local directory interacting with a repository is technically a repository itself, however, it is better to call these directories ‘local repositories’, as they are instances of a remote repository
 :::
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/04-version-control.png){width="100%"}
+[![](figures/04-version-control.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/04-version-control.png"}
 :::
 :::
 ::: 
@@ -482,7 +492,7 @@ Check out [these setup instructions](https://swcarpentry.github.io/git-novice/02
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/05-version-control.jpg){width="50%"}
+[![](figures/05-version-control.jpg){width="50%"}](#){data-modal-type="image" data-modal-url="figures/05-version-control.jpg"}
 :::
 :::
 ::: 
@@ -509,7 +519,7 @@ Check out [these setup instructions](https://swcarpentry.github.io/git-novice/02
 
 :::{.column size="50%"}
 :::{style="text-align: center;"}
-![](figures/commands.webp){width="90%"}
+[![](figures/commands.webp){width="90%"}](#){data-modal-type="image" data-modal-url="figures/commands.webp"}
 :::
 :::
 :::
@@ -519,10 +529,10 @@ Check out [these setup instructions](https://swcarpentry.github.io/git-novice/02
 
 ## Let's create a repository together
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 30px;"}
 - Let's create a new repository on GitHub from scratch!
-- We will create it in our local machine and push it to GitHub
-- Next class, I will show you how to clone it and make changes
+- We will create one in our local machine and make some changes
+- Next class, I will show you how to clone it and modify it
 - We will also learn how to create branches, merge them, and resolve conflicts
 
 :::{.fragment .fade-in}
@@ -534,12 +544,12 @@ Check out [these setup instructions](https://swcarpentry.github.io/git-novice/02
 
 ## Creating a new repository
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column size="50%"}
-1. I will create a new folder/directory in my computer: `my_project` 
-2. Open the `bash/zsh` Terminal and go to the `my_project` directory
-3. I will copy the `my_project` directory path into a text document 
+1. I will create a new folder/directory in my computer: `my-project` 
+2. Open the `bash/zsh` Terminal and go to the `my-project` directory
+3. I will copy the `my-project` directory path into a text document 
 4. I will try to add this folder to the `staging area`
 
 ```{verbatim}
@@ -547,7 +557,7 @@ mkdir my-project
 cd my-project
 git add .
 ```
-5. Error!
+5. [Error!]{.alert} 😟
 
 :::{.fragment .fade-in}
 6. We need to initialise the repository. [Do not do that in your home directory!]{.alert}
@@ -560,7 +570,7 @@ git init
 
 :::{.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/terminal.png){width="130%"}
+[![](figures/terminal.png){width="130%"}](#){data-modal-type="image" data-modal-url="figures/terminal.png"}
 :::
 ::: 
 :::
@@ -577,18 +587,18 @@ git init
 git status
 ```
 
-2. Let's add a `01-cleaning-data.py` file to the `staging area`. Then, check its status
+2. Let's add a `01-data-cleaning.py` file to the `staging area`. Then, check its status
 
 ```{verbatim}
-touch 01-cleaning-data.py
-git add 01-cleaning-data.py
+touch 01-data-cleaning.py
+git add 01-data-cleaning.py
 git status
 ```
 :::
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/terminal02.png){width="100%"}
+[![](figures/terminal02.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/terminal02.png"}
 :::
 ::: 
 :::
@@ -612,7 +622,7 @@ git status
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/terminal03.png){width="100%"}
+[![](figures/terminal03.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/terminal03.png"}
 :::
 :::
 :::
@@ -633,7 +643,7 @@ git status
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/terminal04.png){width="100%"}
+[![](figures/terminal04.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/terminal04.png"}
 :::
 :::
 :::
@@ -653,7 +663,7 @@ git commit -m "initial commit"
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/terminal05.png){width="100%"}
+[![](figures/terminal05.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/terminal05.png"}
 ::: 
 :::
 :::
@@ -679,7 +689,7 @@ git log
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/terminal06.png){width="100%"}
+[![](figures/terminal06.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/terminal06.png"}
 ::: 
 :::
 :::
@@ -699,7 +709,7 @@ git add .
 git commit -m "adding files" 
 echo "Hello you" >> 05-comments.py # edit file
 git add . 
-git commit -m "editing 05-comments.py". 
+git commit -m "editing 05-comments.py" 
 rm -f 05-comments.py 
 git commit -am "deleting 05-comments.py" 
 git log 
@@ -708,7 +718,7 @@ git log
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/terminal07.png){width="100%"}
+[![](figures/terminal07.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/terminal07.png"}
 :::
 :::
 ::: 
@@ -716,7 +726,7 @@ git log
 
 ## Hands on! Git checkout
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column size="50%"}
 2. We use `checkout` to go back in time to a given commit. Let's go back to the "initial commit":
@@ -732,7 +742,7 @@ git checkout 470636f38e409f4f322c48183e19633ebb550625
 
 ::: {.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/terminal08.png){width="200%"}
+[![](figures/terminal08.png){width="200%"}](#){data-modal-type="image" data-modal-url="figures/terminal08.png"}
 :::
 :::
 ::: 
@@ -754,7 +764,7 @@ git log
 ::: 
 
 ::: {.column width="50%"}
-![](figures/terminal09.png){width="100%"}
+[![](figures/terminal09.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/terminal09.png"}
 :::
 :::
 ::: 
@@ -765,7 +775,7 @@ git log
 - [Phew!]{.alert} That was a lot of work! 😅
 - Next class we will see how we can create branches and merge them
 - We will also learn how to resolve conflicts and push our changes to GitHub
-- For now, let's keep our `my_project` folder and we will use it in our next class
+- For now, let's keep our `my-project` folder and we will use it in our next class
 - You can try to create a repository on GitHub and push your changes there! 🤓
 - [Questions?]{.alert}
 :::
@@ -787,7 +797,7 @@ Today we learned about:
 :::
 
 :::{.column size="50%"}
-![](figures/spy.png){width="100%"}
+[![](figures/spy.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/spy.png"}
 :::
 :::
 :::

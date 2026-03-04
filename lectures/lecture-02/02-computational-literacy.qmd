@@ -12,6 +12,8 @@ format:
 transition: slide
 transition-speed: default
 scrollable: true
+revealjs-plugins:
+  - multimodal
 engine: knitr
 editor:
   render-on-save: true
@@ -177,7 +179,7 @@ for (package in packages) {
 
 :::: {.column width="50%"}
 :::{style="font-size: 20px;"}
-![](figures/abacus.jpg)
+[![](figures/abacus.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/abacus.jpg"}
 Video: [How to use an abacus](https://youtu.be/SkUdjlQy3rk&t=176)
 :::
 ::::
@@ -190,7 +192,7 @@ Video: [How to use an abacus](https://youtu.be/SkUdjlQy3rk&t=176)
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/mechanical-calculator.jpg)
+[![](figures/mechanical-calculator.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/mechanical-calculator.jpg"}
 :::
 
 ::: {.column width="50%"}
@@ -209,7 +211,7 @@ Video: [How to use an abacus](https://youtu.be/SkUdjlQy3rk&t=176)
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/transistor.gif)
+[![](figures/transistor.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/transistor.gif"}
 :::
 
 ::: {.column width="50%"}
@@ -233,7 +235,7 @@ The 1970s marked the transition from mechanical to electronic:
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/neumann.webp)
+[![](figures/neumann.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/neumann.webp"}
 :::
 
 ::: {.column width="50%"}
@@ -252,7 +254,7 @@ The 1970s marked the transition from mechanical to electronic:
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/von-neumann-architecture.webp)
+[![](figures/von-neumann-architecture.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/von-neumann-architecture.webp"}
 :::
 
 ::: {.column width="50%"}
@@ -279,7 +281,7 @@ The 1970s marked the transition from mechanical to electronic:
 
 :::: {.columns}
 ::: {.column width="50%"}
-:::{style="font-size: 24px;"}
+:::{style="font-size: 21px;"}
 - Computers represent everything by using [0s and 1s]{.alert}
 - Transistors act as [switches]{.alert}, with 1 for high voltage level and 0 for low voltage level
 - Computers use binary because transistors are [easy to fabricate]{.alert} in silicon and can be densely packed on a chip (~200 billion transistors or more in modern processors, performing 4 billion calculations per second!)
@@ -295,7 +297,7 @@ The 1970s marked the transition from mechanical to electronic:
 :::
 
 ::: {.column width="50%"}
-![](figures/picasso.jpg)
+[![](figures/picasso.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/picasso.jpg"}
 :::
 ::::
 
@@ -306,7 +308,7 @@ The 1970s marked the transition from mechanical to electronic:
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/coins.png)
+[![](figures/coins.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/coins.png"}
 :::
 
 ::: {.column width="50%"}
@@ -325,7 +327,7 @@ The 1970s marked the transition from mechanical to electronic:
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/coins.png)
+[![](figures/coins.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/coins.png"}
 :::
 
 ::: {.column width="50%"}
@@ -336,7 +338,7 @@ The 1970s marked the transition from mechanical to electronic:
   - 3 x $0.25 + 1 x $0.10 + 0 x $0.05 + 2 x $0.01 =
   - $0.87
 
-![](figures/qdnp.png){width=50%}
+[![](figures/qdnp.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/qdnp.png"}
 :::
 :::
 ::::
@@ -348,7 +350,7 @@ The 1970s marked the transition from mechanical to electronic:
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/coins.png)
+[![](figures/coins.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/coins.png"}
 :::
 
 ::: {.column width="50%"}
@@ -399,8 +401,7 @@ Solutions:
 - We can represent numbers using only 0s and 1s with the binary number system
 - Instead of counting the number of 1s, 5s, 10s, and 25s coins you need, count
   the number of 1s, 2s, 4s, 8s, etc
-- Why these numbers? They are [powers of 2]{.alert}. This is a number in [base
-  2]{.alert}
+- Why these numbers? They are [powers of 2]{.alert}!
 
 - A [single binary digit is a bit]{.alert}, e.g., 101 has three bits
 - An [8-bit group is called a byte]{.alert}, e.g., 10101010
@@ -501,13 +502,13 @@ represented by a 1.
 
 :::: {.columns}
 ::: {.column width="60%"}
-![](figures/mona-lisa.png)
+[![](figures/mona-lisa.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/mona-lisa.png"}
 :::
 
 ::: {.column width="40%"}
 :::{style="font-size: 28px; margin-top: 40px;"}
 :::{.incremental}
-- What if we want to represent an image? How can we convert that to numbers
+- What if we want to represent an image? How can we convert that to numbers?
 - First, break the image down into a grid of colours, where each dot of colour has a distinct hue 
 - A dot of colour in this context is called a [pixel](https://en.wikipedia.org/wiki/Pixel)
 - Now we just need to represent a single colour (a pixel) as a number
@@ -519,28 +520,27 @@ represented by a 1.
 ## Images as collections of colours
 ### RGB colour model
 
-:::{style="margin-top:40px;"}
-:::
+:::{style="font-size: 24px; margin-top: 20px;"}
 
-:::: {.columns}
+:::{.columns}
 :::{.column width="50%"}
-:::{style="font-size: 22px; margin-top: 20px;"}
-:::{.incremental}
-- When we represent values with multiple bytes, it can be hard to distinguish where numbers begin and end
-- [Hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) is a number system with 16 digits: 0123456789**ABCDEF**
-- It is used to represent binary numbers in a more compact way
-- Each hex digit corresponds to 4 binary bits, making it a shorthand for binary:
 - The [RGB colour model](https://en.wikipedia.org/wiki/RGB_color_model) is
   widely used in digital displays
 - Each pixel is represented by three numbers, each ranging from 0 to 255
 - The first number represents the amount of red, the second the amount of
   green, and the third the amount of blue
-- 00000000 is no r/g/b and 11111111 is very r/g/b! 
+- 00000000 is no red, green, or blue and 11111111 is very red, green, or blue! 
 - You can try different colours [here](https://www.w3schools.com/colors/colors_rgb.asp)
+- But as you can see, the numbers can be quite long!
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+[![](figures/rgb.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rgb.png"}
 :::
 :::
 :::
-::::
+:::
 
 ## Number systems – Hexadecimal
 ### What is hexadecimal?
@@ -550,7 +550,7 @@ represented by a 1.
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/hexadecimal.png)
+[![](figures/hexadecimal.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/hexadecimal.png"}
 :::
 
 ::: {.column width="50%"}
@@ -608,7 +608,7 @@ represented by a 1.
 
  - This gives a total of 256 intensity levels for each primary colour
 
-- When you combine the three channels, you get a possible colour palette of $256^3$ or about 16.7 million colours
+- When you combine the three channels, you get a possible colour palette of $256^3$ or about 16.7 million colours... but [described in a compact way using hex]{.alert}
 :::
 
 ## Represent text as individual characters
@@ -619,7 +619,7 @@ represented by a 1.
 
 :::: {.columns}
 ::: {.column width="60%"}
-![](figures/glyph.png)
+[![](figures/glyph.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/glyph.png"}
 :::
 
 ::: {.column width="40%"}
@@ -645,7 +645,7 @@ represented by a 1.
 
 :::: {.columns}
 ::: {.column width="60%"}
-![](figures/ascii-art-homer.jpg){width="70%"}
+[![](figures/ascii-art-homer.jpg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/ascii-art-homer.jpg"}
 :::
 
 ::: {.column width="40%"}
@@ -671,19 +671,19 @@ represented by a 1.
 :::: {.columns}
 ::: {.column width="40%"}
 For basic characters, we can use the encoding system called ASCII. This maps
-the numbers 0 to 255 to characters. Therefore, one character is represented by
-one byte
+the numbers 0 to 127 to characters. Therefore, one character is represented by
+one byte (8 bits)
 
 Check it out here: [ASCII Table](https://www.asciitable.com/)
 :::
 
 ::: {.column width="60%"}
-![](figures/ascii-table.png)
+[![](figures/ascii-table.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ascii-table.png"}
 :::
 ::::
 
 ## ASCII is nothing but a simple lookup table
-### Translation
+### Can you guess the binary? Hint: split each byte in half!
 
 :::{style="margin-top:40px;"}
 :::
@@ -708,7 +708,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 :::
 
 ::: {.column width="60%"}
-![](figures/ascii-table.png)
+[![](figures/ascii-table.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ascii-table.png"}
 :::
 ::::
 
@@ -731,7 +731,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 :::
 
 ::: {.column width="60%"}
-![](figures/ascii-table.png)
+[![](figures/ascii-table.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ascii-table.png"}
 :::
 ::::
 
@@ -754,7 +754,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 
 - Find all the Unicode characters here: <https://symbl.cc/en/unicode-table/>
   - "Danilo" in Unicode: `\u0044\u0061\u006e\u0069\u006c\u006f`
-  - "DATASCI 350" in Unicode: `\u0051\u0054\u004d\u0020\u0033\u0035\u0030`
+  - "DATASCI 350" in Unicode: `\u0044\u0041\u0054\u0041\u0053\u0043\u0049\u0020\u0033\u0035\u0030`
     
 - Decoder: <https://symbl.cc/en/tools/decoder/>
 :::
@@ -772,7 +772,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/z3.JPG)
+[![](figures/z3.JPG){width="100%"}](#){data-modal-type="image" data-modal-url="figures/z3.JPG"}
 :::
 
 ::: {.column width="50%"}
@@ -784,7 +784,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 - The Z3 was the first computer to use [binary arithmetic]{.alert} and read binary instructions from punch tape
 - Example: Z4 had 512 bytes of memory
 - Zuse also created the first high-level programming language,
-  [Plankalkül](https://en.wikipedia.org/wiki/Plankalk%C3%BCl)
+  [Plankalkül](https://en.wikipedia.org/wiki/Plankalk%C3%BCl) ("calculus for planning")
 :::
 :::
 ::::
@@ -796,7 +796,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 
 :::: {.columns}
 ::: {.column width="60%"}
-![](figures/assembly.png)
+[![](figures/assembly.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/assembly.png"}
 :::
 
 ::: {.column width="40%"}
@@ -817,7 +817,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 
 :::: {.columns}
 ::: {.column width="60%"}
-![Margaret Hamilton and the Apollo 11 code](figures/apollo11a.jpg)
+[![Margaret Hamilton and the Apollo 11 code](figures/apollo11a.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/apollo11a.jpg"}
 :::
 
 ::: {.column width="40%"}
@@ -857,7 +857,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 :::
 
 ::: {.column width="50%"}
-![](figures/high-low-languages.png)
+[![](figures/high-low-languages.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/high-low-languages.png"}
 :::
 ::::
 
@@ -870,7 +870,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 :::: {.columns}
 ::: {.column width="50%"}
 :::{style="font-size: 24px;"}
-- "Hello, World!" in machine code:
+- "Hello, World!" in machine code (hex):
 
 ```{assembly}
 #| echo: TRUE
@@ -912,7 +912,7 @@ _start:
 - "Hello, World!" in
   [Python](https://en.wikipedia.org/wiki/Python_(programming_language)):
 
-```{R}
+```{python}
 #| echo: true
 #| eval: false
 print("Hello, World!")
@@ -932,11 +932,11 @@ print("Hello, World!")
 :::
 
 :::{style="font-size: 24px;"}
+- **Calculators**: The evolution from Leibniz’s four-species calculating machine to modern electronic computing
+- **Silicon Microchip Computers**: The 1970s revolution with transistors, integrated circuits, and the emergence of Von Neumann architecture
 - **Computational Literacy**: Binary and hexadecimal numbers, characters (ASCII, Unicode), and distinction between high vs low-level programming languages
 - **Early Computing**: Konrad Zuse's pioneering work with programmable digital computers and the use of binary arithmetic
 - **Assembly Language**: The initial approach to programming using human-readable instructions for machine code
-- **Calculators**: The evolution from Leibniz’s four-species calculating machine to modern electronic computing
-- **Silicon Microchip Computers**: The 1970s revolution with transistors, integrated circuits, and the emergence of Von Neumann architecture
 - **Modern Programming Languages**: From low-level assembly languages to high-level languages like `Python`; distinction between compiled and interpreted languages
 :::
 
@@ -947,15 +947,10 @@ print("Hello, World!")
 
 ::::{.incremental}
 :::{style="font-size: 28px;"}
-- We will learn about the [command
-  line](https://en.wikipedia.org/wiki/Command-line_interface) and [shell
-  scripting](https://en.wikipedia.org/wiki/Shell_script) in the terminal
-- Please have your [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-  or [iTerm2](https://iterm2.com/) installed, and we will start coding!
+- We will learn about the [command line](https://en.wikipedia.org/wiki/Command-line_interface) and [shell scripting](https://en.wikipedia.org/wiki/Shell_script) in the terminal 
+- Please have your [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) or [iTerm2](https://iterm2.com/) installed, and we will start coding!
 - If you have VS Code, that's even better! `r emo::ji('winking_face')`
-- Please check the [installation
-  tutorials](https://danilofreire.github.io/datasci350/tutorials/tutorials.html)
-  for more information, and let me know if you have any questions `r emo::ji('smiley')`
+- Please check the [installation tutorials](https://danilofreire.github.io/datasci350/tutorials/tutorials.html) for more information, and let me know if you have any questions `r emo::ji('smiley')`
 
 :::{style="margin-top:30px;"}
 :::

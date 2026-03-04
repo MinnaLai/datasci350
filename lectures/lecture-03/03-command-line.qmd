@@ -12,6 +12,8 @@ format:
 transition: slide
 transition-speed: default
 scrollable: true
+revealjs-plugins:
+  - multimodal
 engine: knitr
 editor:
   render-on-save: true
@@ -68,7 +70,7 @@ for (package in packages) {
 :::
 
 :::{.column width="50%"}
-![](figures/hexadecimal.png)
+[![](figures/hexadecimal.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/hexadecimal.png"}
 :::
 :::
 :::
@@ -89,7 +91,7 @@ for (package in packages) {
 :::
 
 :::{.column width="50%"}
-![](figures/rgb.png)
+[![](figures/rgb.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rgb.png"}
 :::
 :::
 :::
@@ -109,15 +111,15 @@ for (package in packages) {
 :::
 
 :::{.column width="50%"}
-![](figures/high-low-languages.png)
+[![](figures/high-low-languages.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/high-low-languages.png"}
 :::
 :::
 :::
 
 ## Today's lecture
-### Command line: the old school way of interacting with computers
+### Command line: the old-school way of interacting with computers
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 
 :::{.columns}
 :::{.column width="50%"}
@@ -128,7 +130,7 @@ for (package in packages) {
 :::
 
 :::{.column width="50%"}
-![](figures/cli.png)
+[![](figures/cli.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/cli.png"}
 :::
 :::
 :::
@@ -144,8 +146,8 @@ for (package in packages) {
 :::{.columns}
 
 ::: {.column width="50%"}
-![](figures/kernel-and-user-space.png)
-Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)
+[![](figures/kernel-and-user-space.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/kernel-and-user-space.png"}
+Source: [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)
 :::
 
 ::: {.column width="50%"}
@@ -154,7 +156,7 @@ Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shel
 - The [kernel]{.alert} is the core of the OS. It's responsible for interfacing with hardware (drivers), managing resources etc. Running software in the kernel is [extremely sensitive]{.alert}! That's why users are kept away from it!
 - Curiosity: You can see the Linux kernel source code [on GitHub](https://github.com/torvalds/linux)
 - The [user space]{.alert} provides an interface for users, who can run
-  programs/applications on the machine. Hardware access of programmes (e.g., memory usage) is managed by the kernel. Programmes in user space are essentially in sandboxes, which sets a limit to how much damage they can do.
+  programs/applications on the machine. Hardware access of programs (e.g., memory usage) is managed by the kernel. [Programs in user space are essentially in sandboxes]{.alert}, which sets a limit to how much damage they can do
 :::
 :::
 :::
@@ -165,9 +167,9 @@ Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shel
 :::{style="font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
-![](figures/kernel-and-user-space.png)
-![](figures/walnut.jpeg){width=25%}
-Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)/[Kkchaudhary11](https://commons.wikimedia.org/w/index.php?curid=49069244)
+[![](figures/kernel-and-user-space.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/kernel-and-user-space.png"}
+[![](figures/walnut.jpeg){width="25%"}](#){data-modal-type="image" data-modal-url="figures/walnut.jpeg"}
+Source: [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)/[Kkchaudhary11](https://commons.wikimedia.org/w/index.php?curid=49069244)
 :::
 
 ::: {.column width="50%"}
@@ -185,17 +187,17 @@ Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shel
 :::{style="font-size: 22px;"}
 :::{.columns}
 :::{.column width="50%"}
-![](figures/diagram3-terminal-and-shell.png)
-Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)
+[![](figures/diagram3-terminal-and-shell.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/diagram3-terminal-and-shell.png"}
+Source: [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)
 :::
 
 :::{.column width="50%"}
 - Things are still a bit more complicated
 - We're not directly interacting with the "shell" but using a [terminal]{.alert}
-- A terminal is just a program that [reads input]{.alert} from the keyboard, [passes that input]{.alert} to another programme, and [displays the results]{.alert} on the screen
+- A terminal is just a program that [reads input]{.alert} from the keyboard, [passes that input]{.alert} to another program, and [displays the results]{.alert} on the screen
 - A shell program on its own does not do this - it requires a terminal as an interface
 - [Why "terminal"?]{.alert} Back in the old days (before computer screen existed), [terminal machines (hardware!)](https://www.friendlywire.com/articles/vintage-computers/) were used to let humans interface with [large machines ("mainframes")](https://en.wikipedia.org/wiki/Mainframe_computer). Often many terminals were connected to a single machine
-- When you want to work with a computer in a data center (or remotely in cloud computing), you'll still do pretty much the same
+- When you want to work with a computer in a data center (or remotely in cloud computing), you'll still do pretty much the same (but with a screen and keyboard 😉)
 :::
 :::
 :::
@@ -206,17 +208,17 @@ Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shel
 :::{style="font-size: 21px;"}
 :::{.columns}
 :::{.column width="50%"}
-![](figures/diagram3-terminal-and-shell.png)
-Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)
+[![](figures/diagram3-terminal-and-shell.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/diagram3-terminal-and-shell.png"}
+Source: [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)
 :::
 
 :::{.column width="50%"}
-- Terminals are really quite simple - they're just text-based interfaces
+- Terminals are really quite simple - they're just [text-based interfaces]{.alert}
 - The first thing that a terminal will do is run a shell -- a program we can use to operate the computer
 - [Back to the shell:]{.alert} the shell usually takes input
 
   - Interactively from the user via the terminal's [command line]{.alert}
-  - Executes scripts (without command line)
+  - Executes [scripts]{.alert} (without command line)
 - In interactive mode the shell then returns output
 
   - To the terminal where it is printed/shown
@@ -233,7 +235,7 @@ Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shel
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
-![](figures/runningbashscript.png)
+[![](figures/runningbashscript.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/runningbashscript.png"}
 :::
 
 :::{.column width="50%"}
@@ -256,7 +258,7 @@ Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shel
 :::{.fragment .fade-in}
 **Why should you use this...**
 
-![](figures/zsh-screenshot.png)
+[![](figures/zsh-screenshot.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/zsh-screenshot.png"}
 :::
 :::
 
@@ -264,7 +266,7 @@ Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shel
 :::{.fragment .fade-in}
 **... instead of this?**
 
-![](figures/macos-finder-screenshot.jpeg)
+[![](figures/macos-finder-screenshot.jpeg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/macos-finder-screenshot.jpeg"}
 :::
 :::
 :::
@@ -383,9 +385,9 @@ echo $SHELL
 whoami 
 pwd 
 mkdir new-folder
+rm -rf new-folder
 cd ..
 ls
-man ls # type 'j' to scroll down, 'k' to scroll up, 'q' to quit
 ```
 
 Share your results with a colleague (or the class)!
@@ -451,7 +453,8 @@ ls -lh ~/Documents
 ```{bash}
 #| echo: true
 #| eval: false
-# sort the file and display only unique lines
+# sort the file and display 
+# only unique lines
 
 sort -u file.txt 
 ```
@@ -465,7 +468,7 @@ sort -u file.txt
 - For example:
   - `ls ~/Documents/` and `ls -lh ~/Documents` are both valid commands that will yield (different) output
 
-- However, you always need a command.
+- However, you always need a command!
 :::
 :::
 :::
@@ -506,7 +509,7 @@ sort -u file.txt
 
 -   Start with a dash. Usually one letter.
 
--   Multiple options can be chained under a single dash.
+-   Multiple options can be chained under a single dash
 
 ```{bash}
 #| echo: true
@@ -515,7 +518,7 @@ ls -l -a -h /var/log # This works
 ls -lah /var/log # So does this
 ```
 
--   An exception is with (rarer) options requiring two dashes.
+-   An exception is with (rarer) options requiring two dashes
 
 ```{bash}
 #| echo: true
@@ -567,9 +570,9 @@ $ sort -u file.txt
 ::: {.column width="50%"}
 [Arguments]{.alert}
 
--   Tell the command *what* to operate on.
+-   Tell the command *what* to operate on
 
--   Totally depends on the command what legit inputs are.
+-   Totally depends on the command what legit inputs are
 
 -   Can be a file, path, a set of files and folders, a string, and more
 
@@ -591,18 +594,18 @@ mv figs/cat.png best-figs/cat02.png
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width="50%"}
--   The `man` tool can be used to look at the manual page for a topic.
+-   The `man` tool can be used to look at the manual page for a topic
 
--   The `man` pages are grouped into sections, we can see them with `man man`.
+-   The `man` pages are grouped into sections, we can see them with `man man`
 
--   The [`cht.sh`](https://cht.sh/) website can be used directly from the shell to get help on tools. Run it like this: `curl cht.sh/command` ([how to install `curl`](https://curl.se/download.html)).
-![](figures/chtsh.png)
+-   The [`cht.sh`](https://cht.sh/) website can be used directly from the shell to get help on tools. Run it like this: `curl cht.sh/command` ([how to install `curl`](https://curl.se/download.html))
+[![](figures/chtsh.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/chtsh.png"}
 :::
 
 ::: {.column width="50%"}
-![](figures/beatles-help.jpeg)
+[![](figures/beatles-help.jpeg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/beatles-help.jpeg"}
 
-- Or you can use an LLM (or Google) to search for help on a command. 
+- Or you can use an LLM (or Google) to search for help on a command 
 - There's a great chance that someone else has already asked the same question you have 😉
 :::
 :::
@@ -622,7 +625,7 @@ tldr ls
 :::
 
 ::: {.column width="50%"}
-![](figures/beatles-help.jpeg)
+[![](figures/beatles-help.jpeg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/beatles-help.jpeg"}
 
 - For more info on how to get help, see [here](https://effective-shell.com/part-1-transitioning-to-the-shell/getting-help/).
 :::
@@ -666,7 +669,7 @@ Manual pages are shown in the shell. Here are the essentials to navigate through
 :::
 
 :::{.column width="50%"}
-![](figures/rtfm-bayeux.png)
+[![](figures/rtfm-bayeux.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rtfm-bayeux.png"}
 [RTFM](https://en.wikipedia.org/wiki/RTFM)!
 
 **Always check the documentation!**
@@ -716,7 +719,7 @@ Reflection: How was using `man` compared to online searches? How might you use i
 :::
 
 ::: {.column width="50%"}
-![](figures/that-way-giphy.gif)
+[![](figures/that-way-giphy.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/that-way-giphy.gif"}
 :::
 :::
 :::
@@ -728,8 +731,8 @@ Reflection: How was using `man` compared to online searches? How might you use i
 :::{.column width="50%"}
 Key navigation commands are:
 
-- `pwd` to print (the current) working directory.
-- `cd` to change directory.
+- `pwd` to print (the current) working directory
+- `cd` to change directory
 
 ```{bash}
 #| echo: true
@@ -792,7 +795,7 @@ Beware of directory names that contain spaces. Say you have a directory called "
 :::
 
 ::: {.column width="50%"}
-![](figures/expanding-brain.jpg){width="70%"}
+[![](figures/expanding-brain.jpg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/expanding-brain.jpg"}
 :::
 :::
 :::
@@ -832,7 +835,7 @@ For a detailed overview, click [here](https://effective-shell.com/part-1-transit
 
 ## Shell navigation exercise
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 Follow these steps to practice using basic shell commands. Type each command
 and observe the results.
 
@@ -901,7 +904,7 @@ Bonus: Try using the `man` command to learn more about any of the commands you'v
 
 :::{.column width="60%"}
 :::{style="text-align: center; margin-top: -30px;"}
-![](figures/lecture.png)
+[![](figures/lecture.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/lecture.png"}
 :::
 :::
 :::
@@ -909,4 +912,4 @@ Bonus: Try using the `man` command to learn more about any of the commands you'v
 
 # Questions? 😉 {background-color="#2d4563"}
 
-# Thank you very much and see you next class! 😊 🙏🏼{background-color="#2d4563"}
+# Thank you very much and see you soon! 😊 🙏🏼{background-color="#2d4563"}

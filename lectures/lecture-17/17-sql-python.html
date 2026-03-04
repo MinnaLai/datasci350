@@ -1340,7 +1340,7 @@ Danilo Freire
 <li>A <span class="alert">connection</span> links our script to the database file</li>
 <li>A <span class="alert">cursor</span> is like a handle we use to send SQL commands and manage results</li>
 </ul>
-<div id="1ad6ee21" class="cell" data-execution_count="1">
+<div id="8e70131d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="im">import</span> sqlite3</span>
 <span id="cb1-2"><a href></a></span>
 <span id="cb1-3"><a href></a>db_file <span class="op">=</span> <span class="st">&#39;lecture17.db&#39;</span> <span class="co"># Database filename</span></span>
@@ -1365,7 +1365,7 @@ Danilo Freire
 <li>We define the structure of our data using <code>CREATE TABLE</code></li>
 <li>Use <code>cursor.execute()</code> to run the command and <code>conn.commit()</code> to <span class="alert">save</span> the change</li>
 </ul>
-<div id="df709c60" class="cell" data-execution_count="2">
+<div id="ecfad4f9" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a><span class="co"># Use triple quotes for multi-line SQL</span></span>
 <span id="cb2-2"><a href></a><span class="co"># Drop table if exists </span></span>
 <span id="cb2-3"><a href></a>sql_drop <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
@@ -1394,7 +1394,7 @@ Danilo Freire
 <span id="cb2-26"><a href></a><span class="co"># Check if the table was created</span></span>
 <span id="cb2-27"><a href></a>cur.execute(<span class="st">&quot;SELECT name FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;drivers&#39;;&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>&lt;sqlite3.Cursor at 0x103a24240&gt;</code></pre>
+<pre><code>&lt;sqlite3.Cursor at 0x139b32fc0&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1406,7 +1406,7 @@ Danilo Freire
 <li>Once the table exists, we populate it using <code>INSERT INTO</code></li>
 <li>Again, <code>cursor.execute()</code> runs the command, and <code>conn.commit()</code> <span class="alert">makes the insertions permanent</span></li>
 </ul>
-<div id="a0fa3fbf" class="cell" data-execution_count="3">
+<div id="6b1efea2" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="co"># Insert a few rows</span></span>
 <span id="cb4-2"><a href></a>cur.execute(<span class="st">&quot;INSERT INTO drivers (driver_name, team, nationality, victories) VALUES (&#39;Lewis Hamilton&#39;, &#39;Mercedes&#39;, &#39;British&#39;, 103);&quot;</span>)</span>
 <span id="cb4-3"><a href></a>cur.execute(<span class="st">&quot;INSERT INTO drivers (driver_name, team, nationality, victories) VALUES (&#39;Max Verstappen&#39;, &#39;Red Bull Racing&#39;, &#39;Dutch&#39;, 55);&quot;</span>)</span>
@@ -1425,7 +1425,7 @@ Danilo Freire
 <li>After a <code>SELECT</code> query, <code>fetchall()</code> retrieves <span class="alert">all results at once</span> into a list of tuples</li>
 <li>Useful if you need the full dataset immediately, but can use more memory for large results</li>
 </ul>
-<div id="4e6412bb" class="cell" data-execution_count="4">
+<div id="5cae75a9" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a>cur.execute(<span class="st">&#39;SELECT driver_id, driver_name, team FROM drivers&#39;</span>) </span>
 <span id="cb5-2"><a href></a>all_rows <span class="op">=</span> cur.fetchall() <span class="co"># Get the list of tuples</span></span>
 <span id="cb5-3"><a href></a></span>
@@ -1444,7 +1444,7 @@ Danilo Freire
 <li><code>fetchone()</code>, in contrast, retrieves rows <span class="alert">one by one</span>. Each call gets the next available row</li>
 <li>Returns <code>None</code> when no more rows are left. Good for processing sequentially or just getting the top item</li>
 </ul>
-<div id="c6e3c2c4" class="cell" data-execution_count="5">
+<div id="ad41edb2" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a>cur.execute(<span class="st">&#39;SELECT driver_id, driver_name FROM drivers ORDER BY driver_id&#39;</span>)</span>
 <span id="cb7-2"><a href></a></span>
 <span id="cb7-3"><a href></a>row1 <span class="op">=</span> cur.fetchone()</span>
@@ -1465,7 +1465,7 @@ Danilo Freire
 <ul>
 <li>A more “Pythonic” and <span class="alert">memory-efficient</span> way to process results row-by-row is to iterate directly over the cursor</li>
 </ul>
-<div id="42e30212" class="cell" data-execution_count="6">
+<div id="83e21384" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href></a><span class="co"># Execute the query</span></span>
 <span id="cb9-2"><a href></a>query <span class="op">=</span> <span class="st">&quot;SELECT driver_name, team FROM drivers WHERE driver_name LIKE &#39;M%&#39;&quot;</span></span>
 <span id="cb9-3"><a href></a></span>
@@ -1489,7 +1489,7 @@ Danilo Freire
 <ul>
 <li>Use <code>IN</code> to check if a column’s value matches <span class="alert">any value in a specified list</span></li>
 </ul>
-<div id="263a5aa7" class="cell" data-execution_count="7">
+<div id="a7939064" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a>query_in <span class="op">=</span> <span class="st">&quot;SELECT driver_name, team FROM drivers WHERE team IN (&#39;Ferrari&#39;, &#39;Mercedes&#39;)&quot;</span> </span>
 <span id="cb11-2"><a href></a>cur.execute(query_in)</span>
 <span id="cb11-3"><a href></a><span class="cf">for</span> row <span class="kw">in</span> cur.fetchall():</span>
@@ -1502,7 +1502,7 @@ Danilo Freire
 <ul>
 <li><code>NOT IN</code> works similarly to exclude values in the list</li>
 </ul>
-<div id="9ee3df7c" class="cell" data-execution_count="8">
+<div id="dcca923d" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href></a>query_not_in <span class="op">=</span> <span class="st">&quot;SELECT driver_name, team FROM drivers WHERE team NOT IN (&#39;Ferrari&#39;, &#39;Mercedes&#39;)&quot;</span> </span>
 <span id="cb13-2"><a href></a>cur.execute(query_not_in)</span>
 <span id="cb13-3"><a href></a><span class="cf">for</span> row <span class="kw">in</span> cur.fetchall():</span>
@@ -1515,7 +1515,7 @@ Danilo Freire
 <ul>
 <li><code>BETWEEN</code> checks if a value is within a specified range. <span class="alert">Inclusive</span> of the endpoints</li>
 </ul>
-<div id="2fbcdc0e" class="cell" data-execution_count="9">
+<div id="9f98945e" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href></a>query_between <span class="op">=</span> <span class="st">&quot;SELECT driver_name, victories FROM drivers WHERE victories BETWEEN 10 AND 60&quot;</span> </span>
 <span id="cb15-2"><a href></a>cur.execute(query_between)</span>
 <span id="cb15-3"><a href></a><span class="cf">for</span> row <span class="kw">in</span> cur.fetchall():</span>
@@ -1539,7 +1539,7 @@ Danilo Freire
 <li><span class="alert"><code>_</code></span>: Matches exactly one character</li>
 </ul></li>
 </ul>
-<div id="d4d35e6a" class="cell" data-execution_count="10">
+<div id="d0a8c9ee" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href></a><span class="co"># Starts with &#39;L&#39;</span></span>
 <span id="cb17-2"><a href></a>cur.execute(<span class="st">&quot;SELECT driver_name FROM drivers WHERE driver_name LIKE &#39;L%&#39;&quot;</span>)</span>
 <span id="cb17-3"><a href></a><span class="cf">for</span> row <span class="kw">in</span> cur.fetchall(): <span class="bu">print</span>(row)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1547,7 +1547,7 @@ Danilo Freire
 <pre><code>(&#39;Lewis Hamilton&#39;,)</code></pre>
 </div>
 </div>
-<div id="ccd56876" class="cell" data-execution_count="11">
+<div id="ff1eab6f" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href></a><span class="co"># Ends with &#39;Racing&#39;</span></span>
 <span id="cb19-2"><a href></a>cur.execute(<span class="st">&quot;SELECT team FROM drivers WHERE team LIKE &#39;%Racing&#39;&quot;</span>)</span>
 <span id="cb19-3"><a href></a><span class="cf">for</span> row <span class="kw">in</span> cur.fetchall(): <span class="bu">print</span>(row)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1555,7 +1555,7 @@ Danilo Freire
 <pre><code>(&#39;Red Bull Racing&#39;,)</code></pre>
 </div>
 </div>
-<div id="83982eae" class="cell" data-execution_count="12">
+<div id="d5b37101" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href></a><span class="co"># &#39;a&#39; as the second letter </span></span>
 <span id="cb21-2"><a href></a>cur.execute(<span class="st">&quot;SELECT driver_name FROM drivers WHERE driver_name LIKE &#39;_a%&#39;&quot;</span>)</span>
 <span id="cb21-3"><a href></a><span class="cf">for</span> row <span class="kw">in</span> cur.fetchall(): <span class="bu">print</span>(row)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1571,7 +1571,7 @@ Danilo Freire
 <ul>
 <li>SQLite <code>LIKE</code> is case-insensitive for ASCII by default. Use <code>LOWER()</code>/<code>UPPER()</code> for <span class="alert">reliable, explicit case handling</span></li>
 </ul>
-<div id="a3d3388d" class="cell" data-execution_count="13">
+<div id="5cb13d1a" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a><span class="co"># Case-insensitive search for names starting with &#39;l&#39;</span></span>
 <span id="cb23-2"><a href></a>cur.execute(<span class="st">&quot;SELECT driver_name FROM drivers WHERE LOWER(driver_name) LIKE &#39;l%&#39;&quot;</span>)</span>
 <span id="cb23-3"><a href></a><span class="cf">for</span> row <span class="kw">in</span> cur.fetchall(): <span class="bu">print</span>(row)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1582,7 +1582,7 @@ Danilo Freire
 <ul>
 <li>You can also use <code>COLLATE NOCASE</code> to make a specific comparison case-insensitive. <span class="alert">This is a more general (and recommended) approach.</span></li>
 </ul>
-<div id="f1f207b6" class="cell" data-execution_count="14">
+<div id="7e03dd4e" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href></a><span class="co"># Case-insensitive search for names starting with &#39;l&#39; using COLLATE</span></span>
 <span id="cb25-2"><a href></a>cur.execute(<span class="st">&quot;SELECT driver_name FROM drivers WHERE driver_name LIKE &#39;l%&#39; COLLATE NOCASE&quot;</span>)</span>
 <span id="cb25-3"><a href></a></span>
@@ -1620,7 +1620,7 @@ Danilo Freire
 <ul>
 <li>SQL represents missing values as <code>NULL</code>. Use <code>IS NULL</code> to find them. <span class="alert"><code>IS NOT NULL</code> finds rows with values</span></li>
 </ul>
-<div id="123a837e" class="cell" data-execution_count="15">
+<div id="7579dcf8" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href></a>cur.execute(<span class="st">&quot;SELECT driver_name, victories FROM drivers WHERE victories IS NULL&quot;</span>)</span>
 <span id="cb27-2"><a href></a><span class="cf">for</span> row <span class="kw">in</span> cur.fetchall(): <span class="bu">print</span>(row)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1631,7 +1631,7 @@ Danilo Freire
 <ul>
 <li><code>COALESCE(value1, value2, ...)</code> is useful for replacing <code>NULL</code>s with a default value. It returns the <span class="alert">first non-NULL expression</span> in its arguments</li>
 </ul>
-<div id="a863c735" class="cell" data-execution_count="16">
+<div id="db3f4b33" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href></a><span class="co"># If &#39;victories&#39; is NULL, display 0 instead.</span></span>
 <span id="cb29-2"><a href></a>cur.execute(<span class="st">&quot;SELECT driver_name, COALESCE(victories, 0) AS victories_filled FROM drivers&quot;</span>)</span>
 <span id="cb29-3"><a href></a><span class="cf">for</span> row <span class="kw">in</span> cur.fetchall(): <span class="bu">print</span>(row)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1651,7 +1651,7 @@ Danilo Freire
 <li>The default value in <code>COALESCE</code> can be dynamic, calculated by a <span class="alert">subquery</span></li>
 <li><code>CAST(... AS INTEGER)</code> converts the average to an integer for consistency</li>
 </ul>
-<div id="f0f7dcef" class="cell" data-execution_count="17">
+<div id="8d436bff" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href></a>query_coalesce_sub <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
 <span id="cb31-2"><a href></a><span class="st">SELECT driver_name,</span></span>
 <span id="cb31-3"><a href></a><span class="st">  COALESCE(victories, </span></span>
@@ -1690,7 +1690,7 @@ Danilo Freire
 <li>Basic syntax involves the <span class="alert"><code>OVER()</code></span> clause</li>
 <li><span class="alert">Requires SQLite version 3.25.0 or newer</span> (you probably have it, but let’s check!)</li>
 </ul>
-<div id="a15b65aa" class="cell" data-execution_count="18">
+<div id="07a89067" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href></a><span class="co"># Add more data </span></span>
 <span id="cb33-2"><a href></a>more_drivers_data <span class="op">=</span> [</span>
 <span id="cb33-3"><a href></a>    (<span class="st">&#39;Valtteri Bottas&#39;</span>, <span class="st">&#39;Mercedes&#39;</span>, <span class="st">&#39;Finnish&#39;</span>, <span class="dv">10</span>),</span>
@@ -1726,7 +1726,7 @@ SQLite Version: 3.51.1</code></pre>
 <li><code>AVG(...) OVER (PARTITION BY col)</code>: Average within groups (partitions) defined by <code>col</code></li>
 <li><code>RANK() OVER (ORDER BY col)</code>: Assigns rank based on <code>col</code> (<span class="alert">gaps possible for ties</span>)</li>
 </ul>
-<div id="edb9488e" class="cell" data-execution_count="19">
+<div id="94807e05" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href></a>query_window_avg_rank <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
 <span id="cb35-2"><a href></a><span class="st">SELECT </span></span>
 <span id="cb35-3"><a href></a><span class="st">    driver_name, team, victories,</span></span>
@@ -1756,7 +1756,7 @@ SQLite Version: 3.51.1</code></pre>
 <ul>
 <li>A key difference: <code>GROUP BY</code> <span class="alert">reduces</span> the number of rows to one per group. Window functions <span class="alert">maintain</span> all original rows and add new columns based on the window calculation</li>
 </ul>
-<div id="b9663655" class="cell" data-execution_count="20">
+<div id="ed3bf076" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href></a><span class="co"># GROUP BY example (summarizes)</span></span>
 <span id="cb37-2"><a href></a>cur.execute(<span class="st">&quot;SELECT team, ROUND(AVG(victories), 2) FROM drivers WHERE victories IS NOT NULL GROUP BY team&quot;</span>)</span>
 <span id="cb37-3"><a href></a><span class="bu">print</span>(<span class="st">&quot;--- GROUP BY Output ---&quot;</span>)</span>
@@ -1769,7 +1769,7 @@ SQLite Version: 3.51.1</code></pre>
 (&#39;Red Bull Racing&#39;, 30.0)</code></pre>
 </div>
 </div>
-<div id="996b6ccc" class="cell" data-execution_count="21">
+<div id="d794c799" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href></a><span class="co"># Window Function example (adds detail to each row)</span></span>
 <span id="cb39-2"><a href></a>cur.execute(<span class="st">&#39;&#39;&#39;</span></span>
 <span id="cb39-3"><a href></a><span class="st">    SELECT driver_name, team, victories, </span></span>
@@ -1819,7 +1819,7 @@ SQLite Version: 3.51.1</code></pre>
 <li><code>LENGTH(str)</code>, <code>UPPER(str)</code>, <code>LOWER(str)</code></li>
 <li><code>SUBSTR(str, start, length)</code> extracts a portion of the string (<span class="alert">start is 1-indexed</span>)</li>
 </ul>
-<div id="6fcb8c19" class="cell" data-execution_count="22">
+<div id="1089480a" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href></a>query_str1 <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
 <span id="cb41-2"><a href></a><span class="st">SELECT driver_name, </span></span>
 <span id="cb41-3"><a href></a><span class="st">    LENGTH(driver_name) AS len,</span></span>
@@ -1848,7 +1848,7 @@ SQLite Version: 3.51.1</code></pre>
 <li><code>INSTR(str, find)</code> finds the starting position of <code>find</code> within <code>str</code> (<span class="alert">0 if not found</span>)</li>
 <li>The <span class="alert"><code>||</code></span> operator concatenates (joins) strings</li>
 </ul>
-<div id="2c4edcad" class="cell" data-execution_count="23">
+<div id="7dad5440" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href></a>query_str2 <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
 <span id="cb43-2"><a href></a><span class="st">SELECT driver_name, </span></span>
 <span id="cb43-3"><a href></a><span class="st">    REPLACE(driver_name, &#39; &#39;, &#39;_&#39;) AS replaced_space,</span></span>
@@ -1879,7 +1879,7 @@ SQLite Version: 3.51.1</code></pre>
 <li>The <code>CASE</code> statement is SQL’s way of implementing <span class="alert">if-then-else logic</span> within a query</li>
 <li>`CASE WHEN condition THEN result ELSE default_result END</li>
 </ul>
-<div id="b1f5815c" class="cell" data-execution_count="24">
+<div id="e1756f4c" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href></a>query_case1 <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
 <span id="cb45-2"><a href></a><span class="st">SELECT driver_name, victories,</span></span>
 <span id="cb45-3"><a href></a><span class="st">    CASE </span></span>
@@ -1911,7 +1911,7 @@ SQLite Version: 3.51.1</code></pre>
 <li>The <span class="alert">first condition that evaluates to true</span> determines the result for that row</li>
 <li>The optional <code>ELSE</code> handles cases where no <code>WHEN</code> is true</li>
 </ul>
-<div id="2cfa11c0" class="cell" data-execution_count="25">
+<div id="4fae91bf" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a>query_case2 <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
 <span id="cb47-2"><a href></a><span class="st">SELECT driver_name, victories,</span></span>
 <span id="cb47-3"><a href></a><span class="st">    CASE </span></span>
@@ -1944,7 +1944,7 @@ SQLite Version: 3.51.1</code></pre>
 <ul>
 <li><code>CASE</code> offers more control over handling <code>NULL</code>s compared to <code>COALESCE</code>, allowing checks on <span class="alert">other columns</span></li>
 </ul>
-<div id="5382b8b9" class="cell" data-execution_count="26">
+<div id="94f11b36" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href></a>query_case_null <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
 <span id="cb49-2"><a href></a><span class="st">SELECT driver_name, </span></span>
 <span id="cb49-3"><a href></a><span class="st">    -- Fill nationality based on name if NULL</span></span>
@@ -2001,7 +2001,7 @@ SQLite Version: 3.51.1</code></pre>
 <li><span class="alert"><code>pandas.read_sql()</code></span> executes a <code>SELECT</code> query and loads the results directly into a DataFrame</li>
 <li>Remember to <span class="alert">add the connection object as the second argument</span></li>
 </ul>
-<div id="ad62a409" class="cell" data-execution_count="27">
+<div id="51611d6d" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a><span class="co"># Import pandas</span></span>
 <span id="cb51-2"><a href></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb51-3"><a href></a></span>
@@ -2031,7 +2031,7 @@ SQLite Version: 3.51.1</code></pre>
 <ul>
 <li>You can use complex <code>SELECT</code> statements, including joins, filtering, ordering, etc., within <code>read_sql</code></li>
 </ul>
-<div id="cd2e40c7" class="cell" data-execution_count="28">
+<div id="e528ad2d" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href></a>query_pd <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb53-2"><a href></a><span class="st">SELECT driver_name, team, victories </span></span>
 <span id="cb53-3"><a href></a><span class="st">FROM drivers </span></span>
@@ -2060,7 +2060,7 @@ SQLite Version: 3.51.1</code></pre>
 <ul>
 <li>Once loaded, the DataFrame behaves like any other <code>pandas</code> DataFrame. Apply all your data manipulation skills! 🤓</li>
 </ul>
-<div id="269f3b3a" class="cell" data-execution_count="29">
+<div id="3b6d327d" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href></a><span class="co"># df was loaded previously</span></span>
 <span id="cb55-2"><a href></a>avg_vic_pd <span class="op">=</span> df.groupby(<span class="st">&#39;team&#39;</span>)[<span class="st">&#39;victories&#39;</span>].mean().dropna()</span>
 <span id="cb55-3"><a href></a><span class="bu">print</span>(avg_vic_pd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2073,7 +2073,7 @@ Red Bull Racing    30.0
 Name: victories, dtype: float64</code></pre>
 </div>
 </div>
-<div id="3be391cf" class="cell" data-execution_count="30">
+<div id="cf7b69de" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href></a><span class="co"># Example using pandas .query() method for filtering</span></span>
 <span id="cb57-2"><a href></a><span class="bu">print</span>(df.query(<span class="st">&#39;victories &gt; 50 and nationality == &quot;British&quot;&#39;</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2089,7 +2089,7 @@ Name: victories, dtype: float64</code></pre>
 <ul>
 <li>The reverse is also easy: <code>dataframe.to_sql()</code> writes the DataFrame’s contents into a database table.</li>
 </ul>
-<div id="6ff28419" class="cell" data-execution_count="31">
+<div id="9d8fec1f" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href></a><span class="co"># Example: Create a DataFrame with British drivers</span></span>
 <span id="cb59-2"><a href></a>df_british <span class="op">=</span> df[df[<span class="st">&#39;nationality&#39;</span>] <span class="op">==</span> <span class="st">&#39;British&#39;</span>].copy()</span>
 <span id="cb59-3"><a href></a></span>
@@ -2131,7 +2131,7 @@ Name: victories, dtype: float64</code></pre>
 <li>Pivoting reshapes data from “long” to “wide” format. SQLite lacks a dedicated <code>PIVOT</code> command, so we use conditional aggregation.</li>
 <li>Let’s set up the <code>student_scores</code> data first.</li>
 </ul>
-<div id="2ba037be" class="cell" data-execution_count="32">
+<div id="8cae3953" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href></a><span class="co"># Create and populate student_scores table</span></span>
 <span id="cb61-2"><a href></a>cur.execute(<span class="st">&#39;DROP TABLE IF EXISTS student_scores;&#39;</span>)</span>
 <span id="cb61-3"><a href></a>cur.execute(<span class="st">&#39;CREATE TABLE student_scores (student_name TEXT, subject TEXT, score INTEGER, term TEXT);&#39;</span>)</span>
@@ -2169,7 +2169,7 @@ Name: victories, dtype: float64</code></pre>
 <ul>
 <li>The technique involves using an aggregate function (<code>AVG</code>, <code>SUM</code>, etc.) around a <code>CASE</code> statement for each desired new column. <span class="alert"><code>GROUP BY</code></span> ensures one row per student</li>
 </ul>
-<div id="9e53652f" class="cell" data-execution_count="33">
+<div id="9e0a80fc" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href></a>pivot_query <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
 <span id="cb63-2"><a href></a><span class="st">SELECT </span></span>
 <span id="cb63-3"><a href></a><span class="st">    student_name,</span></span>
@@ -2232,7 +2232,7 @@ Name: victories, dtype: float64</code></pre>
 <section>
 <section id="have-a-great-day" class="title-slide slide level1 center" data-background-color="#2d4563">
 <h1>Have a great day! 😊</h1>
-<div id="19381a39" class="cell" data-execution_count="34">
+<div id="2158e3e7" class="cell" data-execution_count="34">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 SQLite connection closed.</code></pre>
@@ -2243,7 +2243,7 @@ SQLite connection closed.</code></pre>
 <h2>Appendix 01</h2>
 <div style="margin-top: 50px; font-size: 22px;">
 <p><strong>Exercise solutions</strong></p>
-<div id="2e333cde" class="cell" data-execution_count="35">
+<div id="585029df" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href></a><span class="im">import</span> sqlite3 </span>
 <span id="cb66-2"><a href></a>db_file <span class="op">=</span> <span class="st">&#39;lecture17.db&#39;</span> </span>
 <span id="cb66-3"><a href></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(db_file) </span>
@@ -2299,7 +2299,7 @@ SQLite connection closed.</code></pre>
 <h2>Appendix 02</h2>
 <div style="margin-top: 50px; font-size: 22px;">
 <p><strong>Exercise solution</strong></p>
-<div id="7fa313be" class="cell" data-execution_count="36">
+<div id="c9631b0c" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href></a><span class="im">import</span> sqlite3</span>
 <span id="cb68-2"><a href></a>db_file <span class="op">=</span> <span class="st">&#39;lecture17.db&#39;</span></span>
 <span id="cb68-3"><a href></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(db_file)</span>
@@ -2337,7 +2337,7 @@ SQLite connection closed.</code></pre>
 <h2>Appendix 03</h2>
 <div style="margin-top: 50px; font-size: 22px;">
 <p><strong>Exercise solution</strong></p>
-<div id="b9706261" class="cell" data-execution_count="37">
+<div id="abf23f5d" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href></a><span class="im">import</span> sqlite3</span>
 <span id="cb70-2"><a href></a>db_file <span class="op">=</span> <span class="st">&#39;lecture17.db&#39;</span></span>
 <span id="cb70-3"><a href></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(db_file)</span>
@@ -2379,7 +2379,7 @@ SQLite connection closed.</code></pre>
 <h2>Appendix 04</h2>
 <div style="margin-top: 50px; font-size: 22px;">
 <p><strong>Exercise solution</strong></p>
-<div id="d04ca4ac" class="cell" data-execution_count="38">
+<div id="606f0fa6" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb72-2"><a href></a><span class="im">import</span> sqlite3</span>
 <span id="cb72-3"><a href></a><span class="im">import</span> os</span>
@@ -2444,7 +2444,7 @@ Name: salary, dtype: float64</code></pre>
 <ul>
 <li><strong>Option 1 (Easiest)</strong>: <span class="alert">Delete the database file</span>. Find <code>.db</code> file (<code>lecture17.db</code>) or use the following code:</li>
 </ul>
-<div id="2eef39d4" class="cell" data-execution_count="39">
+<div id="6b3edf67" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href></a><span class="im">import</span> os</span>
 <span id="cb74-2"><a href></a>db_file_to_delete <span class="op">=</span> <span class="st">&#39;lecture17.db&#39;</span> </span>
 <span id="cb74-3"><a href></a><span class="cf">if</span> os.path.exists(db_file_to_delete):</span>
@@ -2458,7 +2458,7 @@ Name: salary, dtype: float64</code></pre>
 <ul>
 <li><strong>Option 2</strong>: Drop all tables programmatically</li>
 </ul>
-<div id="091555b3" class="cell" data-execution_count="40">
+<div id="51000199" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href></a><span class="im">import</span> sqlite3</span>
 <span id="cb75-2"><a href></a>db_file_to_clean <span class="op">=</span> <span class="st">&#39;lecture17.db&#39;</span> </span>
 <span id="cb75-3"><a href></a>conn_clean <span class="op">=</span> sqlite3.<span class="ex">connect</span>(db_file_to_clean)</span>

@@ -12,6 +12,8 @@ format:
 transition: slide
 transition-speed: default
 scrollable: true
+revealjs-plugins:
+  - multimodal
 engine: python3
 editor:
   render-on-save: true
@@ -26,9 +28,9 @@ editor:
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
-- Literate programming is a paradigm introduced by Donald Knuth in 1984
+- [Literate programming]{.alert} is a paradigm introduced by Donald Knuth in 1984
 - The main idea is to treat [code as a narrative](https://en.wikipedia.org/wiki/Literate_programming), where code and documentation are interwoven
-- Quarto allows us to easily write documents that mix code and text
+- [Quarto](https://quarto.org/) allows us to easily write documents that mix code and text
 - It supports multiple programming languages, and can be used to create reports, slides, and websites
 - Quarto is very similar to [R Markdown](https://rmarkdown.rstudio.com/)
 - All documents have three main components:
@@ -43,7 +45,7 @@ editor:
 title: My Quarto Document
 subtitle: A simple example
 author: Danilo Freire
-date: 2024-09-30
+date: 2026-02-18
 format: 
   html:
     theme: cosmo
@@ -91,12 +93,12 @@ print("Hello, world!")
 :::{.column width="50%"}
 - Blockquotes: `> quote`
 - Horizontal rules: `---`
-- Line breaks: `  `
+- Line breaks: `Line 1  ` (two spaces at the end)
 - Footnotes: `[^1]`
 - Superscript: `2^10^`
 - Subscript: `H~2~O`
-- Math: `$\LaTeX$`
-- For equations, use `$` or `$$`
+- In-line maths: `$\LaTeX$`
+- For equations, use `$$` to create a new line, write the equation in LaTeX, and end with `$$`
 - Check the [LaTeX Wiki](https://en.wikibooks.org/wiki/LaTeX/Mathematics) for math symbols
 - More at [Markdown Guide](https://www.markdownguide.org/)
 :::
@@ -205,15 +207,19 @@ which python
 export QUARTO_PYTHON=/path/to/your/python
 ```
 
-- If you want to permanently set the path, add the line above to your `.bashrc` or `.zshrc` file (it depends on your shell)
+- If you want to permanently set the path, add the line below to your `.bashrc` or `.zshrc` file (it depends on your shell)
 
 ```bash
 # For example, if you use zsh (shell on macOS)
 echo 'export QUARTO_PYTHON=/path/to/your/python' >> ~/.zshrc
+
+# Reload the shell configuration
 source ~/.zshrc
 
 # If you use bash (default shell on Linux)
 echo 'export QUARTO_PYTHON=/path/to/your/python' >> ~/.bashrc
+
+# Reload the shell configuration
 source ~/.bashrc
 ```
 :::
@@ -225,7 +231,7 @@ source ~/.bashrc
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width="30%"}
-- You just have to add a YAML header to your notebook
+- [You just have to add a YAML header to your notebook!](https://quarto.org/docs/get-started/hello/jupyter.html)
 - Quarto will convert it to HTML, PDF, or other formats
 - `quarto render notebook.ipynb --to html` will convert a notebook to HTML
 - You can add `--execute` to run the code
@@ -236,7 +242,7 @@ source ~/.bashrc
 :::
 
 :::{.column width="70%"}
-![](figures/jupyter-notebook.png)
+[![](figures/jupyter-notebook.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/jupyter-notebook.png"}
 :::
 :::
 :::
@@ -259,7 +265,7 @@ source ~/.bashrc
 
 :::{.column width="70%"}
 :::{style="text-align: right;"}
-![](figures/pdf.png){width="85%"}
+[![](figures/pdf.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/pdf.png"}
 :::
 :::
 :::
@@ -278,7 +284,7 @@ source ~/.bashrc
 
 :::{.column width="70%"}
 :::{style="text-align: right;"}
-![](figures/pdf-jupyter.png){width="85%"}
+[![](figures/pdf-jupyter.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/pdf-jupyter.png"}
 :::
 :::
 :::
@@ -292,7 +298,7 @@ source ~/.bashrc
 - You can add academic references to your documents using `bibtex`
 - `BibTeX` is a reference management software developed for LaTeX
 - A `bibtex` file is a plain text file with `.bib` extension
-- You can add references to your YAML header
+- You can add the `.bib` file to your YAML header
 - Use `@key` to cite a reference, `[@key]` to cite in parentheses
 - The key is the first line of the reference in the `.bib` file (e.g., `@article{nash1950equilibrium}`)
 - More information [here](https://quarto.org/docs/authoring/references.html)
@@ -311,9 +317,9 @@ source ~/.bashrc
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width="50%"}
-![](figures/scholar.png)
+[![](figures/scholar.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/scholar.png"}
 
-![](figures/citation.png)
+[![](figures/citation.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/citation.png"}
 
 :::
 
@@ -362,7 +368,7 @@ bibliography: references.bib
 :::
 
 :::{.column width="70%"}
-![](figures/bibtex.png)
+[![](figures/bibtex.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/bibtex.png"}
 :::
 :::
 :::
@@ -386,14 +392,16 @@ format:
 :::
 
 :::{.column width="50%"}
-![](figures/latex.png)
+[![](figures/latex.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/latex.png"}
+
+<https://github.com/danilofreire/quarto-templates>
 :::
 :::
 :::
 
 ## Try it yourself! 🚀 {#sec:exercise-01}
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 30px; font-size: 28px;"}
 - Create a new Quarto document (`.qmd`) in VS Code
 - Add a heading and some text (headings, lists, links and a table)
 - Add a Python code chunk with a simple graph and a print statement
@@ -409,7 +417,7 @@ format:
 ## Presentations!
 ### Slides and reveal.js
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width="50%"}
 - You can also create slides with Quarto! 🎉
@@ -421,7 +429,7 @@ format:
 :::
 
 :::{.column width="50%"}
-![](figures/slides.png)
+[![](figures/slides.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/slides.png"}
 :::
 :::
 :::
@@ -490,16 +498,15 @@ format:
 - For example: <https://github.com/danilofreire/datasci350/blob/main/lectures/lecture-10/simple-slides.html>
 
 :::{style="text-align: center;"}
-![](figures/githack.png){width="100%"}
+[![](figures/githack.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/githack.png"}
 :::
 :::
 :::
 :::
-
 
 ## Websites
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width="50%"}
 - Finally, you can also create websites with Quarto! 😎
@@ -512,7 +519,7 @@ format:
 :::{.column width="50%"}
 - Example website: <https://www.mm218.dev/>
 
-![](figures/website.png)
+[![](figures/website.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/website.png"}
 :::
 :::
 :::
@@ -535,7 +542,7 @@ format:
 :::
 
 :::{.column width="50%"}
-![](figures/website-structure.png)
+[![](figures/website-structure.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/website-structure.png"}
 :::
 :::
 :::
@@ -547,7 +554,7 @@ format:
 - Press `Ctrl+Shift+P` and type `Quarto: Create Project`
 
 :::{style="text-align: center;"}
-![](figures/vscode-create-project-command.png)
+[![](figures/vscode-create-project-command.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/vscode-create-project-command.png"}
 :::
 :::
 
@@ -557,7 +564,7 @@ format:
 - Now, you need to select the website format
 
 :::{style="text-align: center;"}
-![](figures/vscode-create-project-website.png)
+[![](figures/vscode-create-project-website.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/vscode-create-project-website.png"}
 :::
 :::
 
@@ -568,7 +575,7 @@ format:
 - It is a good idea to create a new folder for your website
 
 :::{style="text-align: center;"}
-![](figures/vscode-create-project-directory.png) 
+[![](figures/vscode-create-project-directory.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/vscode-create-project-directory.png"}
 :::
 :::
 
@@ -582,7 +589,7 @@ format:
 - Let's see how to do that!
 
 :::{style="text-align: center;"}
-![](figures/vscode-create-project-render.png){width="80%"}
+[![](figures/vscode-create-project-render.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/vscode-create-project-render.png"}
 :::
 :::
 
@@ -685,7 +692,7 @@ website:
       - href: LICENSE.html
         text: " "
   page-footer: 
-    left: "Copyright 2024, Danilo Freire. The content of this site is licensed under the [MIT License](LICENSE.qmd)." 
+    left: "Copyright 2026, Danilo Freire. The content of this site is licensed under the [MIT License](LICENSE.qmd)." 
     right: 
       - icon: github
         href: https://github.com/danilofreire/datasci350
@@ -772,20 +779,18 @@ We will meet every Monday and Wednesday [...]
 ## On GitHub 🐙
 
 :::{style="margin-top: 30px; font-size: 23px;"}
-![](figures/website-qtm350.png)
+[![](figures/website-qtm350.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/website-qtm350.png"}
 :::
 
 ## Et voilà! 🎉
 
 :::{style="margin-top: 30px; font-size: 23px;"}
-![](figures/voila.png)
+[![](figures/voila.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/voila.png"}
 :::
 
-# And now you know everything Quarto can do! 😎 {background-color="#2d4563"}
+# And now you know what Quarto can do! 😎 {background-color="#2d4563"}
 
 # That's all for today! 🎉 {background-color="#2d4563"}
-
-# See you next time! 😊 {background-color="#2d4563"}
 
 ## Appendix 01 {#sec:appendix-01}
 
@@ -830,7 +835,7 @@ plt.show()
 
 :::{.column width="50%"}
 :::{style="text-align: right;"}
-![](figures/fig-sine.png){width="75%"}
+[![](figures/fig-sine.png){width="75%"}](#){data-modal-type="image" data-modal-url="figures/fig-sine.png"}
 :::
 :::
 :::
